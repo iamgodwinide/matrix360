@@ -1,14 +1,25 @@
 body {
   margin: 0;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(10 53 64);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.loading-wrap {
+  background-color: #062126;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.loading-wrap h1 {
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 30px;
 }
 
 .q-wrap {
@@ -27,30 +38,31 @@ code {
   font-size: 2em;
   font-family: 'Press Start 2P', cursive;
   padding: 20px;
-  background-color: #062126;
-  color: green;
-  border: 3px solid green;
+  color: rgb(249, 249, 249);
+  border: 3px solid rgb(255, 255, 255);
   border-radius: 10px;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .q-wrap .start-wrap button:hover {
-  border-color: rgb(3, 27, 3);
-  color: rgb(3, 27, 3);
+  border-color: rgb(126, 231, 126);
+  color: rgb(91, 222, 91);
 }
 
 .question {
   border: 2px solid green;
   padding: 30px;
   border-radius: 10px;
-  max-width: 400px;
+  max-width: 600px;
 }
 
 .q-wrap h3 {
-  color: green;
+  color: rgb(255, 255, 255);
   margin-bottom: 2em;
   line-height: 30px;
   text-transform: capitalize;
+  line-height: 30px;
 }
 
 .q-wrap .options-wrap button {
@@ -126,7 +138,21 @@ code {
 
 .verify-wrap label {
   margin-left: 10px;
-  color: green;
+  color: rgb(255, 255, 255);
+}
+
+.videos-wrap video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -20;
+}
+
+.videos-wrap video {
+  object-fit: fill;
 }
 
 @keyframes animateup {

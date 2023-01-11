@@ -28,8 +28,33 @@
   color: #61dafb;
 }
 
-.pill {
-  opacity: 0;
+.pill .in {
+  display: none;
+}
+
+#textInfo .hotspot .out {
+  width: 30px !important;
+  height: 30px !important;
+  border-width: 1px !important;
+  border-color: rgba(151, 151, 151, 0.49);
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(2);
+  }
 }
 
 @keyframes App-logo-spin {
