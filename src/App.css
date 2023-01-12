@@ -33,19 +33,21 @@
 }
 
 #textInfo .hotspot .out {
-  width: 30px !important;
-  height: 30px !important;
+  width: 43px !important;
+  height: 43px !important;
   border-width: 1px !important;
-  border-color: rgba(151, 151, 151, 0.49);
+  border-color: blue !important;
   animation-name: grow;
   animation-iteration-count: infinite;
-  animation-duration: 2s;
+  animation-duration: .8s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   animation-direction: alternate;
 }
 
-
+#textInfo:nth-child(3) .hotspot .out {
+  border-color: red !important;
+}
 
 @keyframes grow {
   from {
@@ -53,7 +55,7 @@
   }
 
   to {
-    transform: scale(2);
+    transform: scale(1.5);
   }
 }
 

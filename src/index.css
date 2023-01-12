@@ -14,6 +14,11 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+
 }
 
 .loading-wrap h1 {
@@ -172,5 +177,33 @@ body {
 
   to {
     bottom: -50vh
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .q-wrap .options-wrap button {
+    font-size: 1em;
+  }
+
+  .q-wrap h3 {
+    font-size: 1em;
+  }
+
+  .q-wrap label {
+    font-size: .8em;
+  }
+
+  .q-wrap input {
+    transform: scale(1);
+  }
+
+  .q-wrap .start-wrap button {
+    font-size: 1.2em;
+  }
+
+  .videos-wrap video {
+    object-fit: contain;
+    background-color: #000;
   }
 }

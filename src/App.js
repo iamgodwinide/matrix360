@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Pannellum } from "pannellum-react";
-import img from './img/img.png'
+import img from './img/img2.png'
 import audio from './audio/matrix.mp3'
 import redPill from './videos/red-pill-vista.mp4'
 import bluePill from './videos/matrix-agent-smith.mp4'
@@ -9,6 +9,7 @@ import wearShade from './videos/the-matrix-reloaded-matrix.mp4'
 import matrixRain from './videos/code-purpose-of-life.mp4'
 import { useEffect, useRef, useState } from 'react';
 import { Progress } from 'reactstrap';
+
 
 
 function App() {
@@ -27,9 +28,20 @@ function App() {
 
 
   const handleTwwet = color => {
-    const blueTweet = "I have chosen the blue pill, i will remain in the matrix, I'm an NPC after all."
-    const redTweet = "I have chosen the red pill, I am ready to break free from the matrix and enter the real world.";
-    window.open(`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}`);
+    const blueTweet = `
+    I have chosen the blue pill.
+    %0A%0A
+    I will remain a slave forever…
+    `;
+
+    const redTweet = `
+    I have chosen the red pill.
+    %0A%0A
+    I am ready to enter The Real World…
+    %0A%0A
+    Stealth minting //* at 2pm Est.`;
+
+    window.open(`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://voluble-kringle-a813e9.netlify.app/"}`);
   }
 
   const animate = () => {
@@ -58,8 +70,8 @@ function App() {
       bPill.current.style.zIndex = -10;
       setTimeout(() => {
         window.location.reload();
-      }, 3000)
-    }, 500)
+      }, 2000)
+    }, 300)
   }
 
   const handleShadeEnded = () => {
@@ -69,8 +81,8 @@ function App() {
       mRain.current.play();
       setTimeout(() => {
         handleTwwet("red");
-      }, 1000)
-    }, 200)
+      }, 1000);
+    }, 200);
   }
 
   const chooseBlue = () => {
@@ -90,27 +102,27 @@ function App() {
   return (
     <div className='root'>
       <audio preload='true' hidden src={audio} loop='true' ref={audioPlayer} />
+      {
+        loading
+        &&
+        <div className='loading-wrap'>
+          <h1>The Real World</h1>
+          <Progress
+            animated
+            className="my-3"
+            value={100}
+            color="success"
+            style={{
+              width: "20%",
+              height: "2.3em",
+              margin: "0 auto"
+            }}
+          />
+        </div>
+      }
       {step < 3
         &&
         <div className="q-wrap">
-          {
-            loading
-            &&
-            <div className='loading-wrap'>
-              <h1>The Real World</h1>
-              <Progress
-                animated
-                className="my-3"
-                value={100}
-                color="success"
-                style={{
-                  width: "20%",
-                  height: "2.3em",
-                  margin: "0 auto"
-                }}
-              />
-            </div>
-          }
           {
             step === 0
             &&
@@ -118,7 +130,7 @@ function App() {
               <button onClick={() => {
                 handleNext();
                 audioPlayer.current.play();
-              }}>Start</button>
+              }}>Enter</button>
             </div>
           }
           {
@@ -160,6 +172,7 @@ function App() {
           controls={false}
           ref={bPill}
           onEnded={handleBlueEnded}
+          muted={true}
         />
         <video className='v2'
           src={redPill}
@@ -167,6 +180,7 @@ function App() {
           controls={false}
           ref={rPill}
           onEnded={handleRedEnded}
+          muted={true}
         />
         <video className='v3'
           src={wearShade}
@@ -174,6 +188,7 @@ function App() {
           controls={false}
           ref={wShade}
           onEnded={handleShadeEnded}
+          muted={true}
         />
         <video className='v4'
           src={matrixRain}
@@ -181,6 +196,7 @@ function App() {
           controls={false}
           ref={mRain}
           loop={true}
+          muted={true}
         />
       </div>
       <Pannellum
@@ -188,40 +204,26 @@ function App() {
         height={window.innerHeight + "px"}
         image={img}
         pitch={-15}
-        yaw={360}
+        yaw={365}
         hfov={window.innerWidth < 1024 ? 10 : 90}
         autoLoad
-        author=""
-        title=""
         orientationOnByDefault={false}
         draggable
         keyboardZoom
         mouseZoom
-        preview=""
-        previewAuthor=""
-        previewTitle=""
         showControls
         showFullscreenCtrl={false}
         showZoomCtrl={false}
         onLoad={() => {
-          setStep(0);
           setLoading(false);
+          setStep(0);
         }}
-        onScenechange={(id) => { console.log("Scene has change on " + id); }}
-        onScenechangefadedone={() => { console.log("panorama loaded"); }}
-        onError={(err) => { console.log("Error", err); }}
-        onErrorcleared={() => { console.log("Error Cleared"); }}
-        onMousedown={(evt) => { console.log("Mouse Down", evt); }}
-        onMouseup={(evt) => { console.log("Mouse Up", evt); }}
-        onTouchstart={(evt) => { console.log("Touch Start", evt); }}
-        onTouchend={(evt) => { console.log("Touch End", evt); }}
         hotspotDebug={false}
       >
-
         <Pannellum.Hotspot
           type="custom"
-          pitch={-19.3}
-          yaw={355}
+          pitch={-23}
+          yaw={352}
           hfov={120}
           text={"Blue Pill"}
           handleClick={chooseBlue}
@@ -230,15 +232,14 @@ function App() {
         />
         <Pannellum.Hotspot
           type="custom"
-          pitch={-19.3}
-          yaw={372}
+          pitch={-22.5}
+          yaw={378.5}
           hfov={120}
           handleClick={chooseRed}
           text={"Red Pill"}
-          cssClass={"pill"}
+          cssClass={"pill pill2"}
           name="red"
         />
-
       </Pannellum>
     </div>
   );
