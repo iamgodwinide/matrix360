@@ -28,23 +28,14 @@ function App() {
 
 
   const handleTwwet = color => {
-    const blueTweet = `
-    I have chosen the blue pill.
-    %0A%0A
-    I will remain a slave forever…
-    %0A%0A
+    const blueTweet = `I have chosen the blue pill.%0A%0AI will remain a slave forever…%0A%0A
     `;
 
     const redTweet = `
-    I have chosen the red pill.
-    %0A%0A
-    I am ready to enter The Real World…
-    %0A%0A
-    Stealth minting //* at 2pm Est.
-    %0A%0A
+    I have chosen the red pill.%0A%0AI am ready to enter The Real World…%0A%0AStealth minting //* at 2pm Est.%0A%0A
     `;
 
-    window.open(`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://voluble-kringle-a813e9.netlify.app"}`);
+    window.open(`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://entertherealworld.xyz"}`);
   }
 
   const animate = () => {
@@ -80,12 +71,7 @@ function App() {
   const handleShadeEnded = () => {
     wShade.current.style.zIndex = -10;
     mRain.current.style.zIndex = 10;
-    setTimeout(() => {
-      mRain.current.play();
-      setTimeout(() => {
-        handleTwwet("red");
-      }, 1000);
-    }, 200);
+    handleTwwet("red");
   }
 
   const chooseBlue = () => {
