@@ -32,6 +32,7 @@ function App() {
     I have chosen the blue pill.
     %0A%0A
     I will remain a slave forever…
+    %0A%0A
     `;
 
     const redTweet = `
@@ -39,9 +40,11 @@ function App() {
     %0A%0A
     I am ready to enter The Real World…
     %0A%0A
-    Stealth minting //* at 2pm Est.`;
+    Stealth minting //* at 2pm Est.
+    %0A%0A
+    `;
 
-    window.open(`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://voluble-kringle-a813e9.netlify.app/"}`);
+    window.open(`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://voluble-kringle-a813e9.netlify.app"}`);
   }
 
   const animate = () => {
