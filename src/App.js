@@ -28,14 +28,11 @@ function App() {
 
 
   const handleTwwet = color => {
-    const blueTweet = `I have chosen the blue pill.%0A%0AI will remain a slave forever…%0A%0A
-    `;
+    const blueTweet = `I have chosen the blue pill.%0A%0AI will remain a slave forever…%0A%0A`;
 
-    const redTweet = `
-    I have chosen the red pill.%0A%0AI am ready to enter The Real World…%0A%0AStealth minting //* at 2pm Est.%0A%0A
-    `;
+    const redTweet = `I have chosen the red pill.%0A%0AI am ready to enter The Real World…%0A%0AStealth minting //* at 2pm Est.%0A%0A`;
 
-    window.open(`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://entertherealworld.xyz"}`);
+    window.location.href = (`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://entertherealworld.xyz"}`);
   }
 
   const animate = () => {
