@@ -28,9 +28,9 @@ function App() {
 
 
   const handleTwwet = color => {
-    const blueTweet = `I have chosen the Blue Pill. I will remain in the Matrix forever…%0A%0AComment your choice below the @therealw0rldnft tweet.%0A%0A`;
+    const blueTweet = `I have chosen the Blue Pill. I will remain in the Matrix forever…%0A%0AComment your choice below the @RealW0rldNFT tweet.%0A%0A`;
 
-    const redTweet = `I have chosen the Red Pill and will escape the Matrix.%0A%0AComment your choice below the @therealw0rldnft tweet.%0A%0A`;
+    const redTweet = `I have chosen the Red Pill and will escape the Matrix.%0A%0AComment your choice below the @RealW0rldNFT tweet.%0A%0A`;
 
     window.location.href = (`https://twitter.com/intent/tweet?text=${color === "blue" ? blueTweet : redTweet}&url=${"https://entertherealworld.xyz"}`);
   }
